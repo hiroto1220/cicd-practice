@@ -3,9 +3,9 @@ services:
   server:
     build: .
     image: my-golang-app
-    container_name: golang-server3
+    container_name: golang-server
     ports:
-      - "8082:8080"
+      - "8080:8080"
     volumes:
       - .:/app
     networks:
