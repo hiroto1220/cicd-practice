@@ -1,6 +1,8 @@
 package main
 
 import (
+	"log"
+
 	"github.com/gin-gonic/gin"
 )
 
@@ -14,9 +16,11 @@ func router() *gin.Engine {
 	})
 
 	return r
-
 }
 
 func main() {
-	router().Run(":8080")
+	r := router()
+	if err := r.Run(":8080"); err != nil {
+		log.Fatalf("Failed to run server: %v", err)
+	}
 }
